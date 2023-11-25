@@ -19,6 +19,7 @@ Route::get('/', function () {
     return view('auth/login');
 });
 
+// Route::resource('files',FileController::class);
 
 // JETSTREAM
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
@@ -26,4 +27,5 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     Route::get('/file-upload', [fileController::class, 'index'])->name('file-upload');
     Route::get('/file-upload', [fileController::class, 'create'])->name('file-upload');
     Route::post('/file-upload',[fileController::class, 'store'])->name('file-post');
+   
 });
